@@ -105,8 +105,33 @@ main div:hover{
 
 #sw-resize{cursor: sw-resize}
 
+#msg{
+	display: none; 
+	width: clamp(200px, 80vw, 400px);
+	position: absolute;
+	z-index: 1;
+	padding: 10px;
+	text-align: center;
+	border: 1px solid skyblue;
+	border-radius: 10px;
+	background: linear-gradient(black, transparent);
+	backdrop-filter: blur(30px);
+	opacity: 0; 
+	animation: show 10s ease 0.1s; 
+}
+
+@keyframes show{
+	25%,
+	100%{
+		opacity: 1;
+	}
+}
+
 @media only screen and (orientation: portrait){
 	main div{
 		font-size: clamp(14px, 0.8rem, 20px);
 	}
+	#msg{
+		display: block;
+	}	
 }
